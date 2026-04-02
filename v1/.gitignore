@@ -1,0 +1,18 @@
+# Environment variables 
+.env
+
+# Generated outputs
+images_generated/
+*.docx
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
