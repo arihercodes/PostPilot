@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PostPilot - Social Media Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">PostPilot<span class="logo-dot">.</span></div>
+  <nav class="steps-nav">
+    <div class="step-item active" data-step="1">
+      <span class="step-num">01</span><span class="step-label">Brand</span>
+    </div>
+    <div class="step-item" data-step="2">
+      <span class="step-num">02</span><span class="step-label">Goal</span>
+    </div>
+    <div class="step-item" data-step="3">
+      <span class="step-num">03</span><span class="step-label">Topic</span>
+    </div>
+    <div class="step-item" data-step="4">
+      <span class="step-num">04</span><span class="step-label">Ideas</span>
+    </div>
+    <div class="step-item" data-step="5">
+      <span class="step-num">05</span><span class="step-label">Images</span>
+    </div>
+    <div class="step-item" data-step="6">
+      <span class="step-num">06</span><span class="step-label">Publish</span>
+    </div>
+  </nav>
+  <div class="sidebar-footer">AI-powered content studio</div>
+</aside>
+
+<main class="main">
+
+  <section class="step-panel active" id="step-1">
+    <div class="panel-header">
+      <div class="step-badge">01</div>
+      <h1>Brand Setup</h1>
+      <p>Tell us about your brand so we can craft content that truly represents you.</p>
+    </div>
+
+    <div class="form-grid">
+      <div class="field full">
+        <label>Brand Name <span class="req">*</span></label>
+        <input type="text" id="brand_name" placeholder="e.g. Zenwellness" />
+      </div>
+      <div class="field full">
+        <label>Tagline</label>
+        <input type="text" id="tagline" placeholder="e.g. Heal from within" />
+      </div>
+      <div class="field full">
+        <label>Brand Story <span class="req">*</span></label>
+        <textarea id="brand_story" rows="3" placeholder="1–2 sentences about your brand's origin and purpose"></textarea>
+      </div>
+      <div class="field full">
+        <label>Founder Info</label>
+        <input type="text" id="founder_info" placeholder="Brief info about the founder (optional)" />
+      </div>
+
+      <div class="field full">
+        <label>Unique Value Propositions</label>
+        <div class="tag-input-wrap" id="uvp-wrap">
+          <input type="text" id="uvp-input" placeholder="Type and press Enter…" />
+        </div>
+      </div>
+      <div class="field full">
+        <label>Brand Values</label>
+        <div class="tag-input-wrap" id="values-wrap">
+          <input type="text" id="values-input" placeholder="Type and press Enter…" />
+        </div>
+      </div>
+      <div class="field full">
+        <label>Brand Accomplishments</label>
+        <div class="tag-input-wrap" id="accomplishments-wrap">
+          <input type="text" id="accomplishments-input" placeholder="Type and press Enter…" />
+        </div>
+      </div>
+      <div class="field half">
+        <label>Products</label>
+        <div class="tag-input-wrap" id="products-wrap">
+          <input type="text" id="products-input" placeholder="Type and press Enter…" />
+        </div>
+      </div>
+      <div class="field half">
+        <label>Services</label>
+        <div class="tag-input-wrap" id="services-wrap">
+          <input type="text" id="services-input" placeholder="Type and press Enter…" />
+        </div>
+      </div>
+
+      <div class="field full">
+        <label>Logo Upload <span class="hint">(PNG or JPG)</span></label>
+        <div class="upload-zone" id="logo-drop-zone">
+          <input type="file" id="logo-file" accept=".png,.jpg,.jpeg" hidden />
+          <div class="upload-content">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span>Drop logo here or <u>click to browse</u></span>
+            <small id="logo-name">No file selected</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn-primary" onclick="goToStep2()">Continue →</button>
+    </div>
+  </section>
+
+  <section class="step-panel" id="step-2">
+    <div class="panel-header">
+      <div class="step-badge">02</div>
+      <h1>Content Goal</h1>
+      <p>What do you want to achieve with this post?</p>
+    </div>
+
+    <div class="goal-grid">
+      <div class="goal-card" data-goal="branding">
+        <div class="goal-icon">🏷️</div>
+        <div class="goal-title">Branding</div>
+        <div class="goal-desc">Build identity, awareness, and brand presence</div>
+      </div>
+      <div class="goal-card" data-goal="product promotion">
+        <div class="goal-icon">🛍️</div>
+        <div class="goal-title">Product Promotion</div>
+        <div class="goal-desc">Showcase and sell your products effectively</div>
+      </div>
+      <div class="goal-card" data-goal="audience engagement">
+        <div class="goal-icon">💬</div>
+        <div class="goal-title">Audience Engagement</div>
+        <div class="goal-desc">Drive likes, comments, shares, and DMs</div>
+      </div>
+      <div class="goal-card" data-goal="talent acquisition">
+        <div class="goal-icon">🎯</div>
+        <div class="goal-title">Talent Acquisition</div>
+        <div class="goal-desc">Attract talent and grow your team</div>
+      </div>
+    </div>
+
+    <div id="sub-form" class="sub-form hidden"></div>
+
+    <div class="panel-footer">
+      <button class="btn-secondary" onclick="goToStep(1)">← Back</button>
+      <button class="btn-primary" onclick="goToStep3()">Continue →</button>
+    </div>
+  </section>
+
+  <section class="step-panel" id="step-3">
+    <div class="panel-header">
+      <div class="step-badge">03</div>
+      <h1>Pick Your Topic</h1>
+      <p>Choose a trending hook or enter your own.</p>
+    </div>
+
+    <div id="topics-loading" class="loading-row">
+      <div class="spinner"></div>
+      <span>Fetching live topics…</span>
+    </div>
+
+    <div id="topic-cards" class="topic-cards hidden">
+      <div class="topic-card" id="topic-event" data-type="event">
+        <div class="topic-label">📅 Upcoming Event</div>
+        <div class="topic-text" id="topic-event-text">—</div>
+      </div>
+      <div class="topic-card" id="topic-news" data-type="news">
+        <div class="topic-label">📰 News Headline</div>
+        <div class="topic-text" id="topic-news-text">—</div>
+      </div>
+      <div class="topic-card" id="topic-custom" data-type="custom">
+        <div class="topic-label">✏️ Custom Topic</div>
+        <input type="text" id="custom-topic-input" placeholder="Enter your own topic…" />
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn-secondary" onclick="goToStep(2)">← Back</button>
+      <button class="btn-primary" onclick="goToStep4()">Generate Ideas →</button>
+    </div>
+  </section>
+
+  <section class="step-panel" id="step-4">
+    <div class="panel-header">
+      <div class="step-badge">04</div>
+      <h1>Post Ideas</h1>
+      <p>AI-generated concepts tailored to your brand and goal.</p>
+    </div>
+
+    <div id="ideas-loading" class="loading-row hidden">
+      <div class="spinner"></div>
+      <span>Generating post ideas…</span>
+    </div>
+
+    <div id="ideas-list" class="ideas-list"></div>
+
+    <div class="panel-footer">
+      <button class="btn-secondary" onclick="goToStep(3)">← Back</button>
+      <button class="btn-primary" onclick="goToStep5()">Generate Images →</button>
+    </div>
+  </section>
+
+  <section class="step-panel" id="step-5">
+    <div class="panel-header">
+      <div class="step-badge">05</div>
+      <h1>Images & Captions</h1>
+      <p>Three unique images generated for your selected idea.</p>
+    </div>
+
+    <div id="images-loading" class="loading-row hidden">
+      <div class="spinner"></div>
+      <span>Generating images — this may take a minute…</span>
+    </div>
+
+    <div id="images-grid" class="images-grid"></div>
+
+    <div id="caption-section" class="caption-section hidden">
+      <div class="caption-header">
+        <h3>Captions</h3>
+        <button class="btn-sm" id="gen-captions-btn" onclick="generateCaptions()">Generate Captions</button>
+      </div>
+      <div id="captions-loading" class="loading-row hidden">
+        <div class="spinner"></div><span>Writing captions…</span>
+      </div>
+      <div id="captions-list" class="captions-list"></div>
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn-secondary" onclick="goToStep(4)">← Back</button>
+      <button class="btn-primary" onclick="goToStep6()">Select & Publish →</button>
+    </div>
+  </section>
+
+  <section class="step-panel" id="step-6">
+    <div class="panel-header">
+      <div class="step-badge">06</div>
+      <h1>Publish</h1>
+      <p>Review your final selections and post to Instagram or Facebook.</p>
+    </div>
+
+    <div class="publish-layout">
+      <div class="publish-preview">
+        <h3>Selected Image</h3>
+        <img id="publish-image-preview" src="" alt="Selected image" />
+      </div>
+      <div class="publish-details">
+        <h3>Caption</h3>
+        <textarea id="publish-caption" rows="5" placeholder="Your caption will appear here…"></textarea>
+
+        <h3>Platform</h3>
+        <div class="platform-row">
+          <button class="platform-btn" data-platform="instagram">
+            <span>📸</span> Instagram
+          </button>
+          <button class="platform-btn" data-platform="facebook">
+            <span>👍</span> Facebook
+          </button>
+        </div>
+
+        <div id="publish-loading" class="loading-row hidden">
+          <div class="spinner"></div><span>Publishing…</span>
+        </div>
+
+        <div id="publish-result" class="publish-result hidden"></div>
+
+        <button class="btn-primary publish-go" onclick="publish()">🚀 Publish Now</button>
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn-secondary" onclick="goToStep(5)">← Back</button>
+      <button class="btn-secondary" onclick="startOver()">Start Over</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
